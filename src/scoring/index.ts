@@ -111,7 +111,7 @@ function bruteforce_update(
     const m = make_bruteforce_match(password, i, k);
     const object = optimal.m[i - 1];
 
-    for (const l in object) {
+    for (const l of Object.keys(object)) {
       const i = parseInt(l);
       const last_m = object[i];
       if (last_m.pattern === "bruteforce") continue;
@@ -209,7 +209,7 @@ export function most_guessable_match_sequence(
   for (let k = 0; k < n; k++) {
     for (m of matches_by_j[k]) {
       if (m.i > 0) {
-        for (const l in optimal.m[m.i - 1]) {
+        for (const l of Object.keys(optimal.m[m.i - 1])) {
           const len = parseInt(l);
           update(password, optimal, m, len + 1, _exclude_additive);
         }

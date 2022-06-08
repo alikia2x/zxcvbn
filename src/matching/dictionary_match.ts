@@ -136,7 +136,7 @@ function dedup(subs: [string, string][][]) {
     const label = sub
       .map((k, v) => [k, v] as [[string, string], number])
       .sort()
-      .map((k, v) => k + "," + v)
+      .map((k, v) => `${k.join(",")},${v}`)
       .join("-");
     if (!members.has(label)) {
       members.add(label);
