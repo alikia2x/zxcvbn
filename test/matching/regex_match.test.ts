@@ -14,7 +14,7 @@ describe("matching", () => {
             pattern: "regex",
             regex_match:
               /19\d\d|200\d|201\d/g.exec(pattern) ||
-              (([] as unknown) as RegExpExecArray),
+              ([] as unknown as RegExpExecArray),
             regex_name: name,
             token: pattern,
           },

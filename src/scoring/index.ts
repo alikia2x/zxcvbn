@@ -45,7 +45,7 @@ function update(
   // fare better than this sequence. if so, skip it and return.
   for (const competing_l in optimal.g[k]) {
     const competing_g = optimal.g[k][competing_l];
-    if (((competing_l as unknown) as number) > l) {
+    if ((competing_l as unknown as number) > l) {
       continue;
     }
     if (competing_g <= g) {
