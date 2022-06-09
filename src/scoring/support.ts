@@ -15,12 +15,6 @@ export function nCk(n: number, k: number): number {
   return r;
 }
 
-Math.log10 =
-  Math.log10 ||
-  function (x) {
-    return Math.log(x) * Math.LOG10E;
-  };
-
 export function factorial(n: number): number {
   // unoptimized, called only on small n
   if (n < 2) {

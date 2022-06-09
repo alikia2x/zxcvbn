@@ -85,6 +85,6 @@ export function sequence_match(password: string): ISequenceMatch[] {
     i = j;
     last_delta = delta;
   }
-  update(password, i, password.length - 1, result, last_delta || 0);
+  update(password, i, password.length - 1, result, last_delta ?? 0);
   return result;
 }

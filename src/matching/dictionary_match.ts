@@ -6,7 +6,7 @@ import frequency_lists from "../frequency_lists";
 import { empty, IMatch, sorted, translate } from "./support";
 
 export interface IDictionaryMatch extends IMatch {
-  sub?: { [index: string]: string };
+  sub?: Record<string, string>;
   sub_display?: string;
   pattern: "dictionary";
   matched_word: string;
@@ -101,9 +101,7 @@ export function reverse_dictionary_match(
  * @param ordered_list The list to add as a dictionary.
  */
 export function set_user_input_dictionary(ordered_list: string[]): void {
-  RANKED_DICTIONARIES["user_inputs"] = build_ranked_dictionary([
-    ...ordered_list,
-  ]);
+  RANKED_DICTIONARIES.user_inputs = build_ranked_dictionary([...ordered_list]);
 }
 
 /**
@@ -226,7 +224,7 @@ export function l33t_match(
       const match_sub: Record<string, string> = {}; // subset of mappings in sub that are in use for this match
       for (const subbed_chr in sub) {
         const chr = sub[subbed_chr];
-        if (token.indexOf(subbed_chr) !== -1) {
+        if (token.includes(subbed_chr)) {
           match_sub[subbed_chr] = chr;
         }
       }

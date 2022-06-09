@@ -32,7 +32,7 @@ const SHIFTED_RX = /[~!@#$%^&*()_+QWERTYUIOP{}|ASDFGHJKL:"ZXCVBNM<>?]/;
 
 export function spatial_match_helper(
   password: string,
-  graph: Record<string, (string | null)[]>,
+  graph: Record<string, (string | null)[] | undefined>,
   graph_name: string
 ): ISpatialMatch[] {
   const matches: ISpatialMatch[] = [];
@@ -56,13 +56,13 @@ export function spatial_match_helper(
       let found = false;
       let found_direction = -1;
       let cur_direction = -1;
-      const adjacents = graph[prev_char] || [];
+      const adjacents = graph[prev_char] ?? [];
       // consider growing pattern by one character if j hasn't gone over the edge.
       if (j < password.length) {
         const cur_char = password[j];
         for (const adj of adjacents) {
           cur_direction += 1;
-          if (adj && adj.indexOf(cur_char) !== -1) {
+          if (adj?.includes(cur_char)) {
             found = true;
             found_direction = cur_direction;
             if (adj.indexOf(cur_char) === 1) {

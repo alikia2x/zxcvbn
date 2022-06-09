@@ -66,6 +66,7 @@ export function dictionary_guesses(match: IDictionaryMatch): number {
   match.base_guesses = match.rank; // keep these as properties for display purposes
   match.uppercase_variations = uppercase_variations(match);
   match.l33t_variations = l33t_variations(match);
+  // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   const reversed_variations = (match.reversed && 2) || 1;
   return (
     match.base_guesses *
