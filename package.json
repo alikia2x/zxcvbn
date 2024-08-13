@@ -1,94 +1,93 @@
 {
-  "name": "zxcvbn-typescript",
-  "version": "5.0.1",
-  "description": "realistic password strength estimation, updated and ported to Typescript from Dan Wheeler's zxcvbn",
-  "author": "Tony Richards",
-  "license": "MIT",
-  "main": "./lib/index.js",
-  "types": "./lib/index.d.ts",
-  "files": [
-    "lib",
-    "dist"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/trichards57/zxcvbn"
-  },
-  "bugs": "https://github.com/trichards57/zxcvbn/issues",
-  "contributors": [
-    {
-      "name": "Dan Wheeler"
-    }
-  ],
-  "scripts": {
-    "test": "jest",
-    "test:ci": "jest --coverage && coveralls < coverage/lcov.info",
-    "build": "npm run build-lib && npm run build-dist",
-    "build-lib": "tsc",
-    "build-dist": "make-dir dist && browserify --standalone zxcvbn -t uglifyify lib/index.js > dist/zxcvbn.js",
-    "lint": "eslint ./src && eslint ./test",
-    "lint:fix": "eslint ./src --fix && eslint ./test --fix",
-    "format": "prettier --write \"./src/**/*.ts\" && prettier --write \"./test/**/*.ts\"",
-    "prepublishOnly": "npm run build",
-    "commit": "cz",
-    "prepare": "husky install"
-  },
-  "lint-staged": {
-    "**/*.ts": [
-      "eslint --fix",
-      "prettier --write --end-of-line crlf 'src/**/*.ts'",
-      "prettier --write --end-of-line crlf 'test/**/*.ts'"
-    ]
-  },
-  "devDependencies": {
-    "@types/jest": "^28.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "browserify": "^17.0.0",
-    "commitizen": "^4.2.3",
-    "coveralls": "^3.1.0",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.0.0",
-    "eslint-config-prettier": "^8.0.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-prettier": "^4.0.0",
-    "husky": "^8.0.0",
-    "jest": "^28.0.0",
-    "make-dir-cli": "^3.0.0",
-    "prettier": "^2.2.1",
-    "ts-jest": "^28.0.0",
-    "typescript": "^4.1.5",
-    "uglifyify": "^5.0.2"
-  },
-  "keywords": [
-    "password",
-    "passphrase",
-    "security",
-    "authentication",
-    "strength",
-    "meter",
-    "quality",
-    "estimation",
-    "pattern",
-    "cracking",
-    "scoring",
-    "entropy",
-    "bruteforce"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "overrides": {
-    "commitizen": {
-      "minimist": "1.2.6"
-    },
-    "coveralls": {
-      "minimist": "1.2.6"
-    },
-    "subarg": {
-      "minimist": "1.2.6"
-    }
-  }
+	"name": "zxcvbn-typescript",
+	"version": "5.0.1",
+	"description": "realistic password strength estimation, updated and ported to Typescript from Dan Wheeler's zxcvbn",
+	"author": "Tony Richards",
+	"license": "MIT",
+	"main": "./lib/index.js",
+	"types": "./lib/index.d.ts",
+	"files": [
+		"lib",
+		"dist"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/trichards57/zxcvbn"
+	},
+	"bugs": "https://github.com/trichards57/zxcvbn/issues",
+	"contributors": [
+		{
+			"name": "Dan Wheeler"
+		}
+	],
+	"scripts": {
+		"test": "jest",
+		"test:ci": "jest --coverage && coveralls < coverage/lcov.info",
+		"build": "npm run build-lib && npm run build-dist",
+		"build-lib": "tsc",
+		"build-dist": "make-dir dist && browserify --standalone zxcvbn -t uglifyify lib/index.js > dist/zxcvbn.js",
+		"lint": "eslint ./src && eslint ./test",
+		"lint:fix": "eslint ./src --fix && eslint ./test --fix",
+		"format": "prettier --write .",
+		"prepublishOnly": "npm run build",
+		"commit": "cz"
+	},
+	"lint-staged": {
+		"**/*.ts": [
+			"eslint --fix",
+			"prettier --write --end-of-line crlf 'src/**/*.ts'",
+			"prettier --write --end-of-line crlf 'test/**/*.ts'"
+		]
+	},
+	"devDependencies": {
+		"@types/jest": "^28.0.0",
+		"@typescript-eslint/eslint-plugin": "^5.0.0",
+		"@typescript-eslint/parser": "^5.0.0",
+		"browserify": "^17.0.0",
+		"commitizen": "^4.2.3",
+		"coveralls": "^3.1.0",
+		"cz-conventional-changelog": "^3.3.0",
+		"eslint": "^8.0.0",
+		"eslint-config-prettier": "^8.0.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-prettier": "^4.0.0",
+		"husky": "^8.0.0",
+		"jest": "^28.0.0",
+		"make-dir-cli": "^3.0.0",
+		"prettier": "^2.2.1",
+		"ts-jest": "^28.0.0",
+		"typescript": "^4.1.5",
+		"uglifyify": "^5.0.2"
+	},
+	"keywords": [
+		"password",
+		"passphrase",
+		"security",
+		"authentication",
+		"strength",
+		"meter",
+		"quality",
+		"estimation",
+		"pattern",
+		"cracking",
+		"scoring",
+		"entropy",
+		"bruteforce"
+	],
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	},
+	"overrides": {
+		"commitizen": {
+			"minimist": "1.2.6"
+		},
+		"coveralls": {
+			"minimist": "1.2.6"
+		},
+		"subarg": {
+			"minimist": "1.2.6"
+		}
+	}
 }

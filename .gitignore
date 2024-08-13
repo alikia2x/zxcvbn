@@ -10,3 +10,4 @@ lib
 tmux-*.log
 dist
 coverage
+.DS_Store

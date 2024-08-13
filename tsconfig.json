@@ -1,23 +1,23 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "declaration": true,
-    "declarationMap": true,
-    "sourceMap": true,
-    "outDir": "./lib/",
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node"
-  },
-  "include": ["src"],
-  "typedocOptions": {
-    "mode": "modules",
-    "out": "docs"
-  }
+	"compilerOptions": {
+		"target": "es2015",
+		"module": "commonjs",
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"outDir": "./lib/",
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node"
+	},
+	"include": ["src"],
+	"typedocOptions": {
+		"mode": "modules",
+		"out": "docs"
+	}
 }
