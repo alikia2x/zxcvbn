@@ -1,4 +1,4 @@
-import { expect, describe, it } from "bun:test";
+import { expect, describe, it } from "vitest";
 import {
 	enumerate_l33t_subs,
 	type IDictionaryMatch,

@@ -1,5 +1,6 @@
-import { IDateMatch } from "../../src/matching/date_match";
+import { type IDateMatch } from "../../src/matching/date_match";
 import { estimate_guesses } from "../../src/scoring";
+import { expect, describe, it } from "vitest";
 
 describe("scoring", () => {
 	describe("estimate_guesses", () => {

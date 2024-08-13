@@ -1,7 +1,8 @@
 import { omnimatch } from "../../src/matching";
-import { IRepeatMatch } from "../../src/matching/repeat_match";
+import { type IRepeatMatch } from "../../src/matching/repeat_match";
 import { estimate_guesses, most_guessable_match_sequence } from "../../src/scoring";
 import { repeat_guesses } from "../../src/scoring/repeat_guesses";
+import { expect, describe, it } from "vitest";
 
 describe("scoring", () => {
 	describe("repeat_guesses", () => {

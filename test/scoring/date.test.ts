@@ -1,7 +1,8 @@
-import { IDateMatch } from "../../src/matching/date_match";
+import { type IDateMatch } from "../../src/matching/date_match";
 import { estimate_guesses } from "../../src/scoring";
 import { date_guesses } from "../../src/scoring/date_guesses";
 import { MIN_YEAR_SPACE, REFERENCE_YEAR } from "../../src/scoring/support";
+import { expect, describe, it } from "vitest";
 
 describe("scoring", () => {
 	describe("date_guesses", () => {

@@ -1,5 +1,5 @@
 import { omnimatch } from "../../src/matching";
-import { expect, describe, it } from "bun:test";
+import { expect, describe, it } from "vitest";
 
 describe("matching", () => {
 	describe("omnimatch", () => {

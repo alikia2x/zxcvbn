@@ -1,6 +1,6 @@
 import { type ISequenceMatch, sequence_match } from "../../src/matching/sequence_match";
 import { generatePasswords } from "../test-support";
-import { expect, describe, it } from "bun:test";
+import { expect, describe, it } from "vitest";
 
 describe("matching", () => {
 	describe("sequence_match", () => {

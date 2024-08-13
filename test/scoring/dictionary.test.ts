@@ -1,7 +1,8 @@
-import { IDictionaryMatch } from "../../src/matching/dictionary_match";
+import { type IDictionaryMatch } from "../../src/matching/dictionary_match";
 import { estimate_guesses } from "../../src/scoring";
 import { dictionary_guesses, l33t_variations, uppercase_variations } from "../../src/scoring/dictionary_guesses";
 import { nCk } from "../../src/scoring/support";
+import { expect, describe, it } from "vitest";
 
 describe("scoring", () => {
 	describe("dictionary_guesses", () => {

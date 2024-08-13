@@ -1,4 +1,5 @@
 import { nCk } from "../../src/scoring/support";
+import { expect, describe, it } from "vitest";
 
 describe("scoring support", () => {
 	describe("nCk", () => {

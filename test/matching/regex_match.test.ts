@@ -1,5 +1,5 @@
 import { type IRegexMatch, regex_match } from "../../src/matching/regex_match";
-import { expect, describe, it } from "bun:test";
+import { expect, describe, it } from "vitest";
 
 describe("matching", () => {
 	describe("regex_match", () => {

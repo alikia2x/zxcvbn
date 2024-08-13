@@ -1,6 +1,6 @@
 import { dvorak, keypad, mac_keypad, qwerty } from "../../src/adjacency_graphs";
 import { type ISpatialMatch, spatial_match } from "../../src/matching/spatial_match";
-import { expect, describe, it } from "bun:test";
+import { expect, describe, it } from "vitest";
 
 const testGraphs = {
 	qwerty: qwerty

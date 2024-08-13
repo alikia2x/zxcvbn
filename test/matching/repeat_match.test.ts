@@ -1,6 +1,6 @@
 import { type IRepeatMatch, repeat_match } from "../../src/matching/repeat_match";
 import { generatePasswords } from "../test-support";
-import { expect, describe, it } from "bun:test";
+import { expect, describe, it } from "vitest";
 
 describe("matching", () => {
 	describe("repeat_match", () => {

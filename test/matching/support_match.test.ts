@@ -1,5 +1,5 @@
 import { empty, mod, sorted, translate } from "../../src/matching/support";
-import { expect, describe, it } from "bun:test";
+import { expect, describe, it } from "vitest";
 
 describe("matching support", () => {
 	describe("empty", () => {

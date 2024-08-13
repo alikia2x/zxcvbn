@@ -1,5 +1,6 @@
-import { IAnyMatch, IBruteForceMatch } from "../../src/matching";
+import { type IAnyMatch, type IBruteForceMatch } from "../../src/matching";
 import { most_guessable_match_sequence } from "../../src/scoring";
+import { expect, describe, it } from "vitest";
 
 function getTestMatches(i: number, j: number, guesses: number): IAnyMatch {
 	return {

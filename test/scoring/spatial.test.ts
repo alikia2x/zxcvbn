@@ -1,4 +1,4 @@
-import { ISpatialMatch } from "../../src/matching/spatial_match";
+import { type ISpatialMatch } from "../../src/matching/spatial_match";
 import { estimate_guesses } from "../../src/scoring";
 import {
 	KEYBOARD_AVERAGE_DEGREE,
@@ -6,6 +6,7 @@ import {
 	spatial_guesses
 } from "../../src/scoring/spatial_guesses";
 import { nCk } from "../../src/scoring/support";
+import { expect, describe, it } from "vitest";
 
 describe("scoring", () => {
 	describe("spatial_guesses", () => {

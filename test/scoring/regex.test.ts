@@ -1,7 +1,8 @@
-import { IRegexMatch } from "../../src/matching/regex_match";
+import { type IRegexMatch } from "../../src/matching/regex_match";
 import { estimate_guesses } from "../../src/scoring";
 import { regex_guesses } from "../../src/scoring/regex_guesses";
 import { REFERENCE_YEAR } from "../../src/scoring/support";
+import { expect, describe, it } from "vitest";
 
 describe("scoring", () => {
 	describe("regex guesses", () => {

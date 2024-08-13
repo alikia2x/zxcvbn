@@ -1,4 +1,4 @@
-import { expect, describe, it } from "bun:test";
+import { expect, describe, it } from "vitest";
 import { date_match, type IDateMatch } from "../../src/matching/date_match";
 import { generatePasswords } from "../test-support";
 
