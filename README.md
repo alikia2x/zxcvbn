@@ -1,47 +1,18 @@
-```
-_________________________________________________/\/\___________________
-_/\/\/\/\/\__/\/\__/\/\____/\/\/\/\__/\/\__/\/\__/\/\________/\/\/\/\___
-_____/\/\______/\/\/\____/\/\________/\/\__/\/\__/\/\/\/\____/\/\__/\/\_
-___/\/\________/\/\/\____/\/\__________/\/\/\____/\/\__/\/\__/\/\__/\/\_
-_/\/\/\/\/\__/\/\__/\/\____/\/\/\/\______/\______/\/\/\/\____/\/\__/\/\_
-________________________________________________________________________
-```
+# zxcvbn
 
-This is a Typescript port of Dropbox's [zxcvbn](https://github.com/dropbox/zxcvbn) library.
+This is a enhanced version of Dropbox's [zxcvbn](https://github.com/dropbox/zxcvbn) library.
 
-[![Build Status](https://travis-ci.org/trichards57/zxcvbn.svg?branch=master)](https://travis-ci.org/trichards57/zxcvbn)
-[![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
-[![Coverage Status](https://coveralls.io/repos/github/trichards57/zxcvbn/badge.svg?branch=master)](https://coveralls.io/github/trichards57/zxcvbn?branch=master)
-[![npm version](https://badge.fury.io/js/zxcvbn-typescript.svg)](https://badge.fury.io/js/zxcvbn-typescript)
+`zxcvbn` is a password strength estimator inspired by password crackers. Through pattern matching and conservative estimation, it recognizes and weighs 30k common passwords, common names and surnames according to US census data, popular English words from Wikipedia and US television and movies, and other common patterns like dates, repeats (`aaa`), sequences (`abcd`), keyboard patterns (`qwertyuiop`), l33t speak, and also "strong" passwords that satisfy many website's rules for passwords, but still leaked.
 
-`zxcvbn-typescript` is a password strength estimator inspired by password crackers. Through pattern matching and conservative estimation, it recognizes and weighs 30k common passwords, common names and surnames according to US census data, popular English words from Wikipedia and US television and movies, and other common patterns like dates, repeats (`aaa`), sequences (`abcd`), keyboard patterns (`qwertyuiop`), and l33t speak.
+Consider using zxcvbn as an algorithmic alternative to password composition policy — it is more secure, flexible, and usable when sites require a minimal complexity score in place of annoying rules like "passwords must contain three of {lower, upper, numbers, symbols}".
 
-Consider using zxcvbn-typescript as an algorithmic alternative to password composition policy — it is more secure, flexible, and usable when sites require a minimal complexity score in place of annoying rules like "passwords must contain three of {lower, upper, numbers, symbols}".
-
--   **More secure**: policies often fail both ways, allowing weak passwords (`P@ssword1`) and disallowing strong passwords.
--   **More flexible**: zxcvbn allows many password styles to flourish so long as it detects sufficient complexity — passphrases are rated highly given enough uncommon words, keyboard patterns are ranked based on length and number of turns, and capitalization adds more complexity when it's unpredictaBle.
--   **More usable**: zxcvbn is designed to power simple, rule-free interfaces that give instant feedback. In addition to strength estimation, zxcvbn includes minimal, targeted verbal feedback that can help guide users towards less guessable passwords.
+- **More secure**: policies often fail both ways, allowing weak passwords (`P@ssword1`) and disallowing strong passwords.
+- **More flexible**: zxcvbn allows many password styles to flourish so long as it detects sufficient complexity — passphrases are rated highly given enough uncommon words, keyboard patterns are ranked based on length and number of turns, and capitalization adds more complexity when it's unpredictaBle.
+- **More usable**: zxcvbn is designed to power simple, rule-free interfaces that give instant feedback. In addition to strength estimation, zxcvbn includes minimal, targeted verbal feedback that can help guide users towards less guessable passwords.
 
 For further detail and motivation, please refer to the USENIX Security '16 [paper and presentation](https://www.usenix.org/conference/usenixsecurity16/technical-sessions/presentation/wheeler).
 
-# Installation
-
-```shell
-npm install zxcvbn-typescript
-```
-
-```shell
-yarn install zxcvbn-typescript
-```
-
-## Browserify / Webpack
-
-Bundling zxcvbn-typescript into your website using tools like browserify and webpack is unwise. It is large, you likely only need it on a couple of pages
-(registration, password reset), and you likely don't need it immediately. If you are using browserify, consider using
-[dynamic imports](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html#dynamic-import-expressions) and configuring your bundler
-to allow lazy loading.
-
-# Usage
+## Usage
 
 [try zxcvbn interactively](https://lowe.github.io/tryzxcvbn/) to see these docs in action.
 
@@ -92,26 +63,16 @@ zxcvbn(password, (user_inputs = []));
 
 The optional `user_inputs` argument is an array of strings that zxcvbn-typescript will treat as an extra dictionary. This can be whatever list of strings you like, but is meant for user inputs from other fields of the form, like name and email. That way a password that includes a user's personal information can be heavily penalized. This list is also good for site-specific vocabulary — Acme Brick Co. might want to include ['acme', 'brick', 'acmebrick', etc].
 
-# <a name="perf"></a>Performance
-
-## runtime latency
+## Performance
 
 zxcvbn operates below human perception of delay for most input: ~5-20ms for ~25 char passwords on modern browsers/CPUs, ~100ms for passwords around 100 characters. To bound runtime latency for really long passwords, consider sending `zxcvbn()` only the first 100 characters or so of user input.
 
-# Development
-
-Bug reports and pull requests welcome!
-
-zxcvbn-typescript is built with TypeScript, browserify, and uglify-js. Source lives in `src`, which gets compiled, bundled and minified into `dist/zxcvbn.js`.
-
-Two source files, `adjacency_graphs.ts` and `frequency_lists.ts`, are generated by python scripts in `data-scripts` that read raw data from the `data` directory.
-
-For node developers, in addition to `dist`, the zxcvbn `npm` module includes a `lib` directory (hidden from git) that includes one compiled `.js` and `.js.map` file for every `.ts` in `src`. The type definitions produced by Typescript are there as well.
-
-# Acknowledgments
+## Acknowledgments
 
 Dan Wheeler for the initial zxcvbn project.
 [Dropbox](https://dropbox.com) for supporting open source!
+
+Tony Richards for the Typescript version.
 
 Mark Burnett for releasing his 10M password corpus and for his 2005 book, [Perfect Passwords: Selection, Protection, Authentication](http://www.amazon.com/Perfect-Passwords-Selection-Protection-Authentication/dp/1597490415).
 
