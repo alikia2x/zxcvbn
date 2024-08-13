@@ -1,6 +1,7 @@
+import { expect, describe, it } from "bun:test";
 import {
 	enumerate_l33t_subs,
-	IDictionaryMatch,
+	type IDictionaryMatch,
 	l33t_match,
 	relevant_l33t_subtable
 } from "../../src/matching/dictionary_match";

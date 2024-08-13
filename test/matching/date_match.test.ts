@@ -1,4 +1,5 @@
-import { date_match, IDateMatch } from "../../src/matching/date_match";
+import { expect, describe, it } from "bun:test";
+import { date_match, type IDateMatch } from "../../src/matching/date_match";
 import { generatePasswords } from "../test-support";
 
 describe("matching", () => {

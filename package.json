@@ -12,9 +12,9 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/trichards57/zxcvbn"
+		"url": "https://github.com/alikia2x/zxcvbn"
 	},
-	"bugs": "https://github.com/trichards57/zxcvbn/issues",
+	"bugs": "https://github.com/alikia2x/zxcvbn/issues",
 	"contributors": [
 		{
 			"name": "Dan Wheeler"
@@ -29,18 +29,17 @@
 		"lint": "eslint ./src && eslint ./test",
 		"lint:fix": "eslint ./src --fix && eslint ./test --fix",
 		"format": "prettier --write .",
-		"prepublishOnly": "npm run build",
-		"commit": "cz"
+		"prepublishOnly": "npm run build"
 	},
 	"lint-staged": {
 		"**/*.ts": [
 			"eslint --fix",
-			"prettier --write --end-of-line crlf 'src/**/*.ts'",
-			"prettier --write --end-of-line crlf 'test/**/*.ts'"
+			"prettier --write 'src/**/*.ts'",
+			"prettier --write 'test/**/*.ts'"
 		]
 	},
 	"devDependencies": {
-		"@types/jest": "^28.0.0",
+		"@types/bun": "^1.1.6",
 		"@typescript-eslint/eslint-plugin": "^5.0.0",
 		"@typescript-eslint/parser": "^5.0.0",
 		"browserify": "^17.0.0",
@@ -52,10 +51,8 @@
 		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-prettier": "^4.0.0",
 		"husky": "^8.0.0",
-		"jest": "^28.0.0",
 		"make-dir-cli": "^3.0.0",
 		"prettier": "^2.2.1",
-		"ts-jest": "^28.0.0",
 		"typescript": "^4.1.5",
 		"uglifyify": "^5.0.2"
 	},
@@ -77,17 +74,6 @@
 	"config": {
 		"commitizen": {
 			"path": "./node_modules/cz-conventional-changelog"
-		}
-	},
-	"overrides": {
-		"commitizen": {
-			"minimist": "1.2.6"
-		},
-		"coveralls": {
-			"minimist": "1.2.6"
-		},
-		"subarg": {
-			"minimist": "1.2.6"
 		}
 	}
 }
