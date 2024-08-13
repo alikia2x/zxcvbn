@@ -1,13 +1,12 @@
 {
-	"name": "zxcvbn-typescript",
-	"version": "5.0.1",
-	"description": "realistic password strength estimation, updated and ported to Typescript from Dan Wheeler's zxcvbn",
-	"author": "Tony Richards",
+	"name": "@alikia/zxcvbn",
+	"version": "6.3.0",
+	"description": "Realistic password strength estimation, enhanced version of zxcvbn.",
+	"author": "alikia2x",
 	"license": "MIT",
-	"main": "./lib/index.js",
-	"types": "./lib/index.d.ts",
+	"main": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
 	"files": [
-		"lib",
 		"dist"
 	],
 	"repository": {
@@ -18,24 +17,15 @@
 	"contributors": [
 		{
 			"name": "Dan Wheeler"
+		},
+		{
+			"name": "Tony Richards"
 		}
 	],
 	"scripts": {
 		"test": "vitest",
 		"build": "vite build",
-		"build-lib": "tsc",
-		"build-dist": "make-dir dist && browserify --standalone zxcvbn -t uglifyify lib/index.js > dist/zxcvbn.js",
-		"lint": "eslint ./src && eslint ./test",
-		"lint:fix": "eslint ./src --fix && eslint ./test --fix",
-		"format": "prettier --write .",
-		"prepublishOnly": "npm run build"
-	},
-	"lint-staged": {
-		"**/*.ts": [
-			"eslint --fix",
-			"prettier --write 'src/**/*.ts'",
-			"prettier --write 'test/**/*.ts'"
-		]
+		"format": "prettier --write ."
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^5.0.0",
@@ -71,10 +61,5 @@
 		"scoring",
 		"entropy",
 		"bruteforce"
-	],
-	"config": {
-		"commitizen": {
-			"path": "./node_modules/cz-conventional-changelog"
-		}
-	}
+	]
 }

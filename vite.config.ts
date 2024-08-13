@@ -6,7 +6,7 @@ export default defineConfig({
 	build: {
 		lib: {
 			entry: "src/index.ts",
-			name: "zxcvbn",
+			name: "@alikia/zxcvbn",
 			fileName: "index"
 		},
 		rollupOptions: {
